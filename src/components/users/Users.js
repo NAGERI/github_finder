@@ -1,45 +1,54 @@
-import React, { Component } from "react";
+import React from "react";
+import Spinner from "../layouts/Spinner.js";
 import Useritem from "./Useritem";
+import PropTypes from "prop-types";
 
-class Users extends Component {
-  state = {
+const Users = ({ users, loading }) => {
+  /* state = {
     users: [
       {
         id: "1",
         login: "mojombo",
         avatar_url: "https://avatars0.githubusercontent.com/u/1?v=4",
-        html_url: "https://github.com/mojombo"
+        html_url: "https://github.com/mojombo",
       },
       {
         id: "2",
         login: "defunkt",
         avatar_url: "https://avatars0.githubusercontent.com/u/2?v=4",
-        html_url: "https://github.com/defunkt"
+        html_url: "https://github.com/defunkt",
       },
       {
         id: "3",
         login: "pjhyett",
         avatar_url: "https://avatars0.githubusercontent.com/u/3?v=4",
-        html_url: "https://github.com/pjhyett"
-      }
-    ]
-  };
-
-  render() {
+        html_url: "https://github.com/pjhyett",
+      },
+    ],
+  };*/
+  if (loading) {
+    return <Spinner />;
+  } else {
     return (
       <div style={userStyle}>
-        {this.state.users.map(user => (
+        {/*If you have a variable no need for double braces*/}
+        {users.map((user) => (
           <Useritem key={user.id} user={user} />
         ))}
       </div>
     );
   }
-}
+};
+
+Users.propTypes = {
+  users: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
 //  a variable for the style attribute
 const userStyle = {
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
-  gridGap: "1 rem"
+  gridGap: "1 rem",
 };
 
 export default Users;
