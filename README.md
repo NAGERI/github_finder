@@ -1,3 +1,11 @@
+# GitHub Finder
+
+Github finder is an application created with in React.
+
+- User enters a search term and the application displays the accounts that match it.
+- One of the profiles can be clicked to check more details about it.
+- This application is hosted on netlify, access it by clicking [here](https://githubfinder-26092022.netlify.app)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
