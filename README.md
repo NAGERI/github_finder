@@ -8,6 +8,22 @@ Github finder is an application created with in React.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Containerization
+
+Build the image and run using these commands
+
+```docker
+docker build -t githubfinder:v1 .
+
+docker run -d -p 3000:3000 githubfinder:v1
+```
+
+Alternatively you can run the command below to run a same image from dockerhub.
+
+```docker
+docker run -dp 3000:3000 onealla/githubfinder:v1
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
